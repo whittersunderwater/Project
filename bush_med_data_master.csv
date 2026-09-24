@@ -1,0 +1,86 @@
+species_id,species_name,common_name,noongar_name,category,i6,i5,i1,i2,i3,i4,s1,s2,s3,s4,s5,s6,species_info,photo_hlink
+m1,Banksia,Banksia,Manyret,bush_medicine,y,y,y,y,y,y,y,y,y,y,y,y,Flower infusions are drunk to treat coughs and sore throats.,https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Banksia.jpg
+m2,Eucalyptus,Eucalyptus,Balyoongar,bush_medicine,y,y,y,y,y,y,y,y,y,y,y,y,"Crushed leaves used as antibacterial poultices.
+Used in steam pits to relieve congestion.
+Ground gum used as sore ointment.
+Leaves eaten for dysentry relief.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Eucalyptus.jpg
+m3,Haemodorum,Bloodroot,"Born, Koolung, Meen, Mardja, Matje",bush_medicine,y,y,y,y,y,y,y,y,y,y,y,y,"Leaf bases and roots eaten to treat dysentery.
+Drink made by boiling bulbs used for lung congestion relief.
+Paste made from bulbs used to treat arthritis.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Haemodorum.jpg
+m4,Dianella revoluta,Blue Flax-lily,Mangard,bush_medicine,y,y,y,y,y,y,y,y,y,y,y,y,Drinks made by boiling leaves and roots used to treat headaches and colds.,https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Dianella%20revoluta.jpg
+m5,Pteridium esculentum,Bracken Fern,"Manya, Munda, Moondan-gurnang",bush_medicine,y,y,n,y,y,y,y,y,y,y,y,y,"Leaves and stems used as washes to treat sores, arthritis, and rheumatic pain.
+Taken internally to treat intestinal worms.
+Young leaves and stem juice used to relieve insect bites",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Pteridium%20esculentum.jpg
+m6,Exocarpos sparteus,Broom Ballart,"Djuk, Chuck",bush_medicine,y,y,y,y,y,y,y,y,y,y,y,y,"Twigs and leaves burnt as insect repellant.
+Leaves crushed into poultices to relieve headaches",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Exocarpos%20sparteus.jpg
+m7,Melaleuca,"Broom Brush, Honey Myrtle","Kwytyart, Yilberra",bush_medicine,y,y,y,y,y,y,y,y,y,y,y,y,"Strong aroma used to treat respiratory, stomach, headache, and rheumatic aches and pains.
+Boiled bark used as washes to relieve sores, burns, infections.
+Entire plant used to make ointments for relief of muscular aches and arthritis when mixed with animal fats.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Melaleuca.jpg
+m8,Typha domingensis,Bulrush,"Yangeti, Yanget, Lirinbi, Yanjidi, Yunjeedie, Yunjid, Tanjil, Yandijut",bush_medicine,y,y,y,y,y,y,y,y,y,y,y,y,Female flowers were crushed and used as an antiseptic,https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Typha%20domingensis.jpg
+m9,Babingtonia camphorosmae,Camphor Myrtle,Kurren,bush_medicine,y,y,y,y,y,y,y,y,y,y,y,y,"Leaf infusions used to treat eczema.
+Crushed leaves used to treat headaches.
+Boiled leaves used to treat stomach upset.
+Flowers, leaves, and stems mixed with animal fat used for skin conditions.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Babingtonia%20camphorosmae.jpg
+m10,Carpobrotus virescens,Coastal Pigface,"Bain, Kolbolgo, Kolboje, Metjarak",bush_medicine,y,y,n,y,y,y,y,y,y,y,y,y,"Crushed leaves infused to treat diarrhoea, dysentery, stomach cramps.
+Infusion gargled to treat sore throats, laryngitis, bacterial and fungal infections.
+Juice of leaves used like aloe vera to treat skin conditions and burns, muscular aches and rheumatism.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Carpobrotus%20virescens.jpg
+m11,Pisolithus,Dog Poo Fungus,Noomar,bush_medicine,y,y,y,y,y,y,y,y,y,y,y,y,Spores from broken up fruits used on wounds and sores to prevent infection.,https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Pisolithus.jpg
+m12,Solanum lasiophyllum,Flannel Bush,Grun Grun,bush_medicine,y,y,y,n,n,n,y,y,y,y,y,y,Roots crushed and boiled used a poultices on swollen legs.,https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Solanum%20lasiophyllum.jpg
+m13,Kunzea preissiana,Glowing Kunzea,Kondill,bush_medicine,n,n,y,y,n,y,y,y,y,y,y,y,"Leaves and flowers crushed into poultices to treat arthritis and flu pains.
+Poultices applied to head to treat stress and anxiety.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Kunzea%20preissiana.jpg
+m14,Xanthorrhoea preissii,Grass Tree,"Balga, Baaluk, Blagarr, Ballak, Balligar, Balluk, Baluk, Barar, Barlock, Barro, Beara, Paaluk, Paluk",bush_medicine,y,y,y,y,y,y,y,y,y,y,y,y,"Gum chewed for diarrhoea and consitpation relief.
+Inner top of tree eaten for upset stomach relief.
+Sinusitis relieved by inhaling resin smoke.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Xanthorrhoea%20preissii.jpg
+m15,Hibbertia glomerosa,Guinea Flower,Ballyion,bush_medicine,y,n,y,n,n,n,y,y,y,y,y,y,Open wounds treated with antiseptic poultices made from crushed leaves.,https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Hibbertia%20glomerosa.jpg
+m16,Grevillea juncifolia,Honeysuckle Grevillea,"Moncart, Paarluc",bush_medicine,y,n,n,n,n,n,y,y,y,y,y,y,Ash from burned bark used to promote healing of sores.,https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Grevillea%20juncifolia.jpg
+m17,Acacia acuminata,Jam Wattle,"Mungart, Mangart, Manjart, Munert, Munertor, Mungaitch, Mungat, Mungut",bush_medicine,y,y,y,y,n,y,y,y,y,y,y,y,"Gum eated to aid digestion and treat diarrhoea.
+Washes made from flowers treat blisters and burns.
+Crushed flowers inhaled to aid sleep.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Acacia%20acuminata.jpg
+m18,Trymalium odoratissimum,Karri Hazel,Djob Born,bush_medicine,y,y,y,y,y,y,y,y,y,y,y,y,"Leaves, twigs, and flowers boiled  used in baths to treat aches and pains.
+Soaked rags used as poultices for swollen joints.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Trymalium%20odoratissimum.jpg
+m19,Exocarpos aphyllus,Leafless Ballart,"Chuk, Chukk, Dtulya, Merrin",bush_medicine,y,n,y,n,n,y,y,y,y,y,y,y,"Mashed stems were boiled and drunk to relieve colds.
+Stems made into poultices for 'wasting diseases'.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Exocarpos%20aphyllus.jpg
+m20,Cymbopogon ambiguus,Lemon Grass,Djerp,bush_medicine,n,n,y,n,n,n,y,y,y,y,y,y,"Leaves, stems, and rootsmade into a wash for sores, skin rashes, cramps, earaches, and sore eyes.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Cymbopogon%20ambiguus.jpg
+m21,Acacia microbotrya,Manna Wattle,"Paadyang, Mindalong, Badjong, Galyang, Koonert, Kunart, Kwonnat, Men, Menna",bush_medicine,y,y,y,y,n,y,y,y,y,y,y,y,"Gum used to relieve inflamed skin.
+Inner bark used in infusions to treat diarrhoea.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Acacia%20microbotrya.jpg
+m22,Scaevola spinescens,Maroon Bush,Murin Murin,bush_medicine,y,n,y,n,n,n,y,y,y,y,y,y,"Whole plant boiled and drunk to treat cancer, intestinal complaints, heart disease, urinary and kidney problems.
+Boiled stems were drunk to treat sores and boils.
+Smoke from burning whole plant inhaled to treat colds.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Scaevola%20spinescens.jpg
+m23,Corymbia calophylla,Marri,"Marri, Mari, Marril, Marree, Mundup, Nandup, Nundup, Kurrden, Kardan, Cardau, Gardan, Grydan, Mahree, Ngora, Ngumbat",bush_medicine,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,"Resin used to treat wounds, upset stomachs, mouthwash, disinfectant, and eczema.
+Seeds eaten to treat diarrhoea and constipation.
+Leaves used to treat headaches, sinusitis, and colds.
+Flowers used to treat diabetes.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Corymbia%20calophylla.jpg
+m24,Atriplex nummularia,Old Man Saltbush,"Purngep, Pining, Binga",bush_medicine,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,"Leaves used to cleanse skin, sores, burns, and wounds.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Atriplex%20nummularia.jpg
+m25,Santalum acuminatum,Quandong,"Dumbari, Jawirli, Walku, Wanga, Wayanau, Wongil, Candang, Wong, Wonyill, Wolgol",bush_medicine,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,"Seeds ground into animal fat used to treat sore muscles.
+Leaves used to treat sores, boils, gonorrhoea, and diabetes",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Santalum%20acuminatum.jpg
+m26,Acacia cyclops,Red-eyed Wattle,"Munyuret, Woolya Wah, Wilyawa",bush_medicine,Y,Y,n,Y,Y,Y,Y,Y,Y,Y,Y,Y,Juice of leaves used to treat eczema.,https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Acacia%20cyclops.jpg
+m27,Callitris preissii,Rottnest Island Pine,Marro,bush_medicine,y,y,y,y,y,y,y,y,y,y,y,y,"Leaves, stems, and bark used to treat respiratory problems.
+Infusions used to relieve colds and coughs, sinusitis, washes for burns and insect bites.
+Nuts were used to treat sores, rashes, skin irritations.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Callitris%20preissii.jpg
+m28,Kennedia prostrata,Running Postman,Wollung,bush_medicine,y,y,y,y,y,y,n,n,y,y,y,y,Nectar used to treat sore throats.,https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Kennedia%20prostrata.jpg
+m29,Melaleuca cuticularis,Saltwater Paperbark,"Bibool, Bewel, Koll, Mudurda",bush_medicine,n,y,y,y,y,y,y,y,y,y,y,y,"Leaves used to treat colds.
+Bark used as bandages",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Melaleuca%20cuticularis.jpg
+m30,Santalum spicatum,Sandalwood,"Willarak, Uilarac, Waang, wolgol, Wollgat",bush_medicine,y,n,y,y,n,y,y,y,y,y,y,y,"Inner bark used to treat coughs and bronchitis.
+Oil from nuts used to treat colds, stiffness, and skin rashes.
+Leaves used to treat burns, scalds, and sores.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Santalum%20spicatum.jpg
+m31,Pycnoporus coccineus,Scarlet Bracket Fungus,Botting,bush_medicine,y,y,y,y,y,y,y,y,y,y,y,y,"Fungus used to treat oral thrush, sore lips, and relieve teething.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Pycnoporus%20coccineus.jpg
+m32,Allocasuarina fraseriana,Western Sheoak,"Condil, Kulli, Gulli, Kwell",bush_medicine,y,y,y,y,y,y,y,y,y,y,y,y,"Spiritual and emotional wellbeing. Sounds of wind through leaves used to induce sleep.
+Falling leaves believed to be tears of healing from ancestors",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Allocasuarina%20fraseriana.jpg
+m33,Cymbopogon obtectus,Silky Heads,Djiraly,bush_medicine,y,y,y,n,n,y,y,y,y,y,y,y,"Leaves used to treat coughs and colds, sore muscles, headaches, and sores.
+Roots were used to treat earaches",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Cymbopogon%20obtectus.jpg
+m34,Eremophila scoparia,Silver Emu Bush,Barangg,bush_medicine,n,n,y,n,n,n,y,y,y,y,y,y,"Leaves used to treat sores, colds, headaches, diarrhoea, and chest pains.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Eremophila%20scoparia.jpg
+m35,Clematis linearifolia,Small Leaf Clematis,Taaruk,bush_medicine,y,y,n,y,y,y,y,y,y,y,y,y,Leaves used to treat irritated skin.,https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Clematis%20linearifolia.jpg
+m36,Persoonia longifolia,Snottygobble,Kadgeegurr,bush_medicine,n,y,n,y,y,y,y,y,y,y,y,y,"Bark was used as eyewashes and to treat skin disorders.
+Leaves used to relieve colds and sore throats.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Persoonia%20longifolia.jpg
+m37,Calytrix strigosa,Starflower,Koorin,bush_medicine,y,y,y,y,n,n,y,y,y,y,y,y,"Bark, leaves, and twigs used to treat skin problems.
+Bark used to treat sinusitis.
+Leaves used to treat rheumatism, muscle aches, bruises, sprains, and wounds.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Calytrix%20strigosa.jpg
+m38,Dodonaea viscosa,Sticky Hopbush,Waning,bush_medicine,y,y,y,y,y,y,y,y,y,y,y,y,"Leaves used to treat toothache, stonefish and stingray wounds, fevers.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Dodonaea%20viscosa.jpg
+m39,Agonis flexuosa,Sweet Peppermint,"Wanil, Wanill, Wannow, Wonong, Wannung, Warndilyy",bush_medicine,y,y,n,y,y,y,y,y,y,y,y,y,"Leaves used to treat chest and nasal congestion, minor wounds, and as mouthwash.
+Leaves and twigs used to treat respiratory problems.
+Ash used to treat wounds and sores.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Agonis%20flexuosa.jpg
+m40,Pittosporum angustifolium,Weeping Pittosporum,Wongin,bush_medicine,y,y,y,n,n,y,y,y,y,y,y,y,"Seeds, fruit pulp, leaves, and wood used to treat pain and cramps.
+Fruit pulp used to treat eczema and skin irritation.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Pittosporum%20angustifolium.jpg
+m41,Hypocalymma angustifolium,White Myrtle,"Koodgeed, Kudjidi",bush_medicine,y,y,y,y,y,y,y,y,y,y,y,y,"Leaves used to treat headaches and nasal congestion.
+Leaves and twigs used to treat skin conditions.",https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Hypocalymma%20angustifolium.jpg
+m42,Xylomelum occidentale,Woody Pear,"Danja, Dumbung, Koongal, Quabba",bush_medicine,n,y,n,y,y,n,y,y,y,y,y,y,Leaves and bark used to treat pain.,https://uniwa-my.sharepoint.com/personal/23221449_student_uwa_edu_au/Documents/CITS1501%20Project/Species%20data/Species%20Photos/Xylomelum%20occidentale.jpg

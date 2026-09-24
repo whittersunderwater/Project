@@ -1,0 +1,13 @@
+season_id,season_name,season_info,season_timing,season_weather
+s1,Birak,"Season of the young.
+The first summer",Dec - Jan,Dry and hot
+s2,Bunuru,"Season of adolescence.
+The second summer",Feb - Mar,Hottest
+s3,Djeran,"Season of adulthood.
+Autumn",Apr - May,Cooler
+s4,Makuru,"Season of fertility.
+Winter",Jun - Jul,Coldest and wettest
+s5,Djilba,"Season of conception.
+The first spring.",Aug - Sep,Cold nights and warmer days
+s6,Kambarang,"Season of birth.
+The second spring",Oct - Nov,Dry periods
