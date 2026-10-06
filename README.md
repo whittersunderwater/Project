@@ -8,7 +8,7 @@ This app helps you explore plant species by Noongar season, ILUA area, and categ
 - A local web server to load the CSV files; opening `index.html` directly is not supported. Python is one option for starting the server.
 - The project files kept together, including the CSV files and image folders.
 
-The automated tests have been run on Windows using Playwright's Chromium browser. Other operating systems and browsers, including Safari and Microsoft Edge, have not yet been confirmed by the project tests. The app is built with standard web technologies, but compatibility on other platforms should be tested before relying on it.
+The automated tests have been run on Windows using Playwright's Chromium browser. Other operating systems (macOS, Linux, iOS, Android) and browsers, including Safari and Microsoft Edge, have not yet been confirmed by the project tests. The app is built with standard web technologies, but compatibility on other platforms should be tested before relying on it.
 
 ## Start the app
 

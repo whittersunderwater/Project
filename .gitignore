@@ -1,0 +1,5 @@
+# ignore cache and virtual environment files
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/

@@ -1,5 +1,5 @@
 #### Script for automated testing, edge cases, error handling, and performance
-### run the tests by typing py -m pytest -v app_tests.py in terminal
+### run the tests in terminal by typing py -m pytest -v app_tests.py
 
 import csv
 import re
@@ -123,8 +123,16 @@ def test_season_comparisons_dashboard_shows_catalog_counts_and_navigation(
     ) as csv_file:
         ilua_ids = [row["ilua_id"] for row in csv.DictReader(csv_file)]
 
-    clean_page.get_by_role("button", name="Season comparisons").click()
-    expect(clean_page.get_by_role("heading", name="Season comparisons")).to_be_visible()
+    clean_page.get_by_role(
+        "button",
+        name="Season, ILUA, and Category comparisons",
+    ).click()
+    expect(
+        clean_page.get_by_role(
+            "heading",
+            name="Season, ILUA, and Category comparisons",
+        )
+    ).to_be_visible()
     expect(clean_page.locator(".comparison-bar-row[data-comparison-group='season']")).to_have_count(6)
     expect(clean_page.locator(".comparison-bar-row[data-comparison-group='ilua']")).to_have_count(6)
     expect(clean_page.locator(".comparison-bar-row[data-comparison-group='category']")).to_have_count(3)
