@@ -261,7 +261,7 @@ function renderSeasonComparisonsView() {
   return `
     <div class="view comparisons-view">
       <div class="view-header">
-        <h2>Season comparisons</h2>
+        <h2>Season, ILUA, and Category comparisons</h2>
         <p>Compare how many catalogued species are recorded across seasons, ILUA areas, and plant categories.</p>
       </div>
 
