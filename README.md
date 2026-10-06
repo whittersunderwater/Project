@@ -2,6 +2,8 @@
 
 This app helps you explore plant species by Noongar season, ILUA area, and category. Species lists include plant photos and information, and you can mark species you find.
 
+edit for shits and giggles
+
 ## Start the app
 
 The app loads its CSV data with browser requests, so open it through a local web server rather than opening `index.html` directly.
