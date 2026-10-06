@@ -1,16 +1,16 @@
-# Noongar Seasons and Country Explorer
+## Noongar Seasons and Country Explorer
 
 This app helps you explore plant species by Noongar season, ILUA area, and category. Species lists include plant photos and information, and you can mark species you find.
 
-## Start the app
-
-### System requirements
+## System requirements
 
 - A modern browser with JavaScript enabled. The app has not been tested against a formal browser support matrix.
 - A local web server to load the CSV files; opening `index.html` directly is not supported. Python is one option for starting the server.
 - The project files kept together, including the CSV files and image folders.
 
 The automated tests have been run on Windows using Playwright's Chromium browser. Other operating systems and browsers, including Safari and Microsoft Edge, have not yet been confirmed by the project tests. The app is built with standard web technologies, but compatibility on other platforms should be tested before relying on it.
+
+## Start the app
 
 1. Download all files from GitHub (https://github.com/whittersunderwater/Project.git) and save them to your device.
 2. Open a terminal and navigate to the "Project" folder.
@@ -49,9 +49,11 @@ Select **Season comparisons** on the home page to view species counts by season,
 
 Use **Back to top of list** at the bottom of the species view to return to the start of a long list.
 
+To add a species, edit the appropriate `bush_food_data_master.csv`, `bush_med_data_master.csv`, or `wildflower_data_master.csv` file, add a row using the existing columns and a unique `species_id`, then save the CSV and refresh the app.
+
 ## Troubleshooting
 
-If the app is not loading correctly and missing items like species photographs, select Ctrl + F5 in the browser for a hard refresh.
+If the app is not loading correctly and missing items like species photographs, press Ctrl + F5 while in the browser for a hard refresh.
 Contact app developers via GitHub if issues persist.
 
 ## Offline use
