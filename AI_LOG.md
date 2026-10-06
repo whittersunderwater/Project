@@ -98,3 +98,12 @@ This log records substantive requests made in the current session. Conversationa
 - "Please add a test that verifies every species is assigned to the correct combinations"
 - "Clearly explain how this app handles edge cases, error handling, and reliable application behaviour"
 - "Create a button on the bottom-left of the 'Home' page, beneath the season wheel, that allows users to generate a full species list of every species found to date without any season, ILUA or category filtering."
+
+## 2026-10-06
+- add a button labelled "Season comparisons" to the bottom right of the home page that takes users to a page that contains a dashboard style layout of comparisons of seasons, ilua, categories, and species counts.
+- Please create a file with an editable architecture diagram showing:
+• the main components of the application;
+• how the components interact; and
+• how data moves through the system.
+• The diagram should accurately represent the application you actually built.
+
