@@ -49,7 +49,11 @@ Select **Season comparisons** on the home page to view species counts by season,
 
 Use **Back to top of list** at the bottom of the species view to return to the start of a long list.
 
+## Add species to the app
+
 To add a species, edit the appropriate `bush_food_data_master.csv`, `bush_med_data_master.csv`, or `wildflower_data_master.csv` file, add a row using the existing columns and a unique `species_id`, then save the CSV and refresh the app.
+
+To add its photo, copy the image into the `species_photos/` folder and enter its relative path in that row's `photo_hlink` column, for example `species_photos/Acacia cyclops.jpg`. Ensure the filename of the photo exactly matches the name entered into the species_name column of the .csv file. Keep the image in `species_photos/` when moving or copying the project files.
 
 ## Troubleshooting
 
