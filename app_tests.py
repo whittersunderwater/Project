@@ -108,6 +108,9 @@ def test_home_found_species_button_opens_empty_state(clean_page: Page) -> None:
     expect(clean_page.locator(".empty-state")).to_have_text(
         "No species have been marked Found yet."
     )
+    expect(clean_page.locator("#found-to-date-count")).to_have_text(
+        re.compile(r"Species found to date: 0 of [1-9]\d*")
+    )
     expect(clean_page.locator("#found-filter")).to_have_count(0)
 
 
@@ -120,11 +123,14 @@ def test_found_to_date_list_includes_all_categories_and_updates_when_unchecked(
         ("wildflower", "Wildflowers", "wildflower_data_master.csv"),
     ]
     found_records = []
+    total_species = 0
     for category, label, filename in sources:
         with (PROJECT_ROOT / filename).open(
             encoding="utf-8-sig", newline=""
         ) as csv_file:
-            row = next(csv.DictReader(csv_file))
+            rows = list(csv.DictReader(csv_file))
+        total_species += len(rows)
+        row = rows[0]
         found_records.append((row["species_id"], row["species_name"], label))
 
     found_state = {species_id: True for species_id, _, _ in found_records}
@@ -134,6 +140,9 @@ def test_found_to_date_list_includes_all_categories_and_updates_when_unchecked(
     )
     clean_page.reload()
     clean_page.get_by_role("button", name="View all species found to date").click()
+    expect(clean_page.locator("#found-to-date-count")).to_have_text(
+        f"Species found to date: {len(found_records)} of {total_species}"
+    )
 
     displayed_names = clean_page.locator(".species-body h3").all_text_contents()
     assert displayed_names == sorted(
@@ -156,6 +165,9 @@ def test_found_to_date_list_includes_all_categories_and_updates_when_unchecked(
     )
     expect(clean_page.locator(".species-card")).to_have_count(2)
     expect(clean_page.locator(".found-toggle input:checked")).to_have_count(2)
+    expect(clean_page.locator("#found-to-date-count")).to_have_text(
+        f"Species found to date: 2 of {total_species}"
+    )
 
 
 def test_navigation_reaches_species_list(clean_page: Page) -> None:
@@ -164,6 +176,26 @@ def test_navigation_reaches_species_list(clean_page: Page) -> None:
     expect(clean_page.locator(".selection-summary")).to_be_visible()
     expect(clean_page.locator("#found-filter")).to_have_value("all")
     expect(clean_page.locator(".species-card").first).to_be_visible()
+    expect(clean_page.locator("#species-found-count")).to_contain_text(
+        "Species found: 0 of "
+    )
+
+
+def test_species_found_count_updates_without_changing_the_total(
+    clean_page: Page,
+) -> None:
+    open_species_page(clean_page)
+
+    count_label = clean_page.locator("#species-found-count")
+    initial_count = count_label.inner_text()
+    total_species = int(initial_count.rsplit(" ", 1)[1])
+    assert total_species > 0
+
+    clean_page.locator(".found-toggle input").first.check()
+    expect(count_label).to_have_text(f"Species found: 1 of {total_species}")
+
+    clean_page.locator("#found-filter").select_option("found")
+    expect(count_label).to_have_text(f"Species found: 1 of {total_species}")
 
 
 def test_species_are_sorted_alphabetically(clean_page: Page) -> None:
@@ -419,6 +451,9 @@ def test_every_season_area_category_combination_renders(
                     f"Species mismatch for season={season_id}, "
                     f"ILUA={ilua_id}, category={category}. "
                     f"Expected {expected_species}; got {actual_species}."
+                )
+                expect(clean_page.locator("#species-found-count")).to_have_text(
+                    f"Species found: 0 of {len(expected_species)}"
                 )
 
                 if expected_species:

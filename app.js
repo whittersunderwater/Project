@@ -300,6 +300,7 @@ function renderCategoryView() {
 // Displays the filtered species list for the selected season, ILUA area, and category.
 function renderSpeciesView() {
   const allSpecies = getFilteredSpecies();
+  const foundCount = allSpecies.filter((item) => Boolean(STATE.checked[item.id])).length;
   const species = allSpecies.filter((item) => {
     if (STATE.foundFilter === 'all') return true;
     return Boolean(STATE.checked[item.id]) === (STATE.foundFilter === 'found');
@@ -314,12 +315,17 @@ function renderSpeciesView() {
       </div>
 
       <div class="species-filters">
-        <label for="found-filter">Show species:</label>
-        <select id="found-filter">
-          <option value="all" ${STATE.foundFilter === 'all' ? 'selected' : ''}>All species</option>
-          <option value="found" ${STATE.foundFilter === 'found' ? 'selected' : ''}>Found</option>
-          <option value="not-found" ${STATE.foundFilter === 'not-found' ? 'selected' : ''}>Not found</option>
-        </select>
+        <div class="species-filter-control">
+          <label for="found-filter">Show species:</label>
+          <select id="found-filter">
+            <option value="all" ${STATE.foundFilter === 'all' ? 'selected' : ''}>All species</option>
+            <option value="found" ${STATE.foundFilter === 'found' ? 'selected' : ''}>Found</option>
+            <option value="not-found" ${STATE.foundFilter === 'not-found' ? 'selected' : ''}>Not found</option>
+          </select>
+        </div>
+        <p class="species-found-count" id="species-found-count" aria-live="polite">
+          Species found: ${foundCount} of ${allSpecies.length}
+        </p>
       </div>
       ${STATE.storageWarning ? `
         <p class="storage-warning" role="status">
@@ -345,12 +351,16 @@ function renderFoundSpeciesView() {
       undefined,
       { sensitivity: 'base' }
     ));
+  const foundCount = species.length;
 
   return `
     <div class="view found-species-view">
       <div class="view-header">
         <h2>Species Found to Date</h2>
         <p>All species you have marked Found, across every season, ILUA area, and category.</p>
+        <p class="found-to-date-count" id="found-to-date-count" aria-live="polite">
+          Species found to date: ${foundCount} of ${speciesCatalog.length}
+        </p>
       </div>
       ${STATE.storageWarning ? `
         <p class="storage-warning" role="status">
@@ -482,6 +492,14 @@ function bindSpeciesEvents(foundOnly = false) {
       } catch (error) {
         console.error('Could not save Found selections to browser storage.', error);
         STATE.storageWarning = true;
+      }
+
+      const matchingSpecies = getFilteredSpecies();
+      const foundCount = matchingSpecies
+        .filter((species) => Boolean(STATE.checked[species.id])).length;
+      const foundCountElement = document.querySelector('#species-found-count');
+      if (foundCountElement) {
+        foundCountElement.textContent = `Species found: ${foundCount} of ${matchingSpecies.length}`;
       }
 
       const matchesFoundFilter = STATE.foundFilter === 'all' ||
