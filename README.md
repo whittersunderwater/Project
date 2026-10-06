@@ -47,3 +47,15 @@ Contact app developers via GitHub if issues persist.
 Keep the project files together, including the CSV files, `category_photos/`, and `species_photos/`. When those files are available on the device, the app and its photos do not require an internet connection. A local web server is still required to load the CSV data in the browser. Found checkbox states are stored separately in that browser's local storage.
 
 ## References for artwork, information, and photographs in the app:
+
+Atlas of Living Australia. (n.d.). Home.  http://www.ala.org.au.
+Australian Bureau of Meteorology. (2026). Nyoongar calendar. Indigenous Weather Knowledge. https://www.bom.gov.au/resources/indigenous-weather-knowledge/indigenous-seasonal-calendars/nyoongar-calendar
+Hansen, V., & Horsfall, J. (2019). Noongar bush tucker : bush food plants and fungi of the south-west of Western Australia. UWA Publishing.
+Hansen, V., & Horsfall, J. (2016). Noongar bush medicine plants : medicinal plants of the south-west of Western Australia. UWA Publishing.
+Hansen, Y. S., & Slater, B. (n.d.). Six seasons [Painting]. Japingka Aboriginal Art Gallery. https://japingkaaboriginalart.com
+Microsoft. (2026). Bing satellite imagery layer [Map]. https://ecn.t3.tiles.virtualearth.net/tiles/
+South West Aboriginal Land and Sea Council. (n.d.). About the settlement agreement. https://www.noongar.org.au/about-settlement-agreement
+WA Wildflower Nursery. (n.d.). Current plant lists. https://wawildflowernursery.org.au/plant-list
+Western Australian Herbarium. (n.d.). Home. Florabase. Department of Biodiversity, Conservation and Attractions. https://florabase.dbca.wa.gov.au/
+Western Australian Land Information Authority. (2026). Native_Title_ILUA_LGATE_067 GDA2020 [Data set]. Data WA. https://data-downloads.slip.wa.gov.au/LGATE-067/Shapefile
+Western Australian Land Information Authority. (2026). Townsites (LGATE-248) [Data set]. Data WA. https://data-downloads.slip.wa.gov.au/LGATE-248/Shapefile
