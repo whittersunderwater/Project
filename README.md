@@ -35,6 +35,8 @@ Use **Back** to return one step and change the previous selection. Use **Home** 
 
 On the season wheel home page, select **View all species found to date** to see every species you have marked Found across all seasons, ILUA areas, and categories. You can uncheck species from this list as well.
 
+Select **Season comparisons** on the home page to view species counts by season, ILUA area, and category, including a season-by-ILUA comparison table.
+
 Use **Back to top of list** at the bottom of the species view to return to the start of a long list.
 
 ## Troubleshooting

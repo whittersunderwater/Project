@@ -1,4 +1,5 @@
 #### Script for automated testing, edge cases, error handling, and performance
+### run the tests by typing py -m pytest -v app_tests.py in terminal
 
 import csv
 import re
@@ -93,6 +94,79 @@ def replace_csv_response(page: Page, filename: str, body: str, status: int = 200
 
 
 def test_season_wheel_loads_six_seasons(clean_page: Page) -> None:
+    expect(clean_page.locator(".season-wedge")).to_have_count(6)
+
+
+def test_season_comparisons_dashboard_shows_catalog_counts_and_navigation(
+    clean_page: Page,
+) -> None:
+    sources = [
+        ("bush_food", "bush_food_data_master.csv"),
+        ("bush_medicine", "bush_med_data_master.csv"),
+        ("wildflower", "wildflower_data_master.csv"),
+    ]
+    species_rows = []
+    for category, filename in sources:
+        with (PROJECT_ROOT / filename).open(
+            encoding="utf-8-sig", newline=""
+        ) as csv_file:
+            species_rows.extend(
+                (category, row) for row in csv.DictReader(csv_file)
+            )
+
+    with (PROJECT_ROOT / "season_data_master.csv").open(
+        encoding="utf-8-sig", newline=""
+    ) as csv_file:
+        season_ids = [row["season_id"] for row in csv.DictReader(csv_file)]
+    with (PROJECT_ROOT / "ilua_data_master.csv").open(
+        encoding="utf-8-sig", newline=""
+    ) as csv_file:
+        ilua_ids = [row["ilua_id"] for row in csv.DictReader(csv_file)]
+
+    clean_page.get_by_role("button", name="Season comparisons").click()
+    expect(clean_page.get_by_role("heading", name="Season comparisons")).to_be_visible()
+    expect(clean_page.locator(".comparison-bar-row[data-comparison-group='season']")).to_have_count(6)
+    expect(clean_page.locator(".comparison-bar-row[data-comparison-group='ilua']")).to_have_count(6)
+    expect(clean_page.locator(".comparison-bar-row[data-comparison-group='category']")).to_have_count(3)
+
+    for season_id in season_ids:
+        count = sum(row.get(season_id, "").lower() == "y" for _, row in species_rows)
+        expect(
+            clean_page.locator(
+                f".comparison-bar-row[data-comparison-group='season'][data-comparison-id='{season_id}'] .comparison-count"
+            )
+        ).to_have_text(f"{count} species")
+
+    for ilua_id in ilua_ids:
+        count = sum(row.get(ilua_id, "").lower() == "y" for _, row in species_rows)
+        expect(
+            clean_page.locator(
+                f".comparison-bar-row[data-comparison-group='ilua'][data-comparison-id='{ilua_id}'] .comparison-count"
+            )
+        ).to_have_text(f"{count} species")
+
+    for category, _ in sources:
+        count = sum(row_category == category for row_category, _ in species_rows)
+        expect(
+            clean_page.locator(
+                f".comparison-bar-row[data-comparison-group='category'][data-comparison-id='{category}'] .comparison-count"
+            )
+        ).to_have_text(f"{count} species")
+
+    for season_id in season_ids:
+        for ilua_id in ilua_ids:
+            count = sum(
+                row.get(season_id, "").lower() == "y"
+                and row.get(ilua_id, "").lower() == "y"
+                for _, row in species_rows
+            )
+            expect(
+                clean_page.locator(
+                    f".comparison-table td[data-season='{season_id}'][data-ilua='{ilua_id}']"
+                )
+            ).to_have_text(str(count))
+
+    clean_page.get_by_role("button", name="Go back").click(force=True)
     expect(clean_page.locator(".season-wedge")).to_have_count(6)
 
 

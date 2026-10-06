@@ -110,6 +110,11 @@ function render() {
   if (view === 'foundSpecies') {
     appView.innerHTML = renderFoundSpeciesView();
     bindSpeciesEvents(true);
+    return;
+  }
+
+  if (view === 'comparisons') {
+    appView.innerHTML = renderSeasonComparisonsView();
   }
 }
 
@@ -199,9 +204,101 @@ function renderSeasonView() {
           </div>
         </div>
       </div>
-      <button class="found-species-button" type="button">View all species found to date</button>
+      <div class="home-actions">
+        <button class="found-species-button" type="button">View all species found to date</button>
+        <button class="comparison-button" type="button">Season comparisons</button>
+      </div>
     </div>
     `;
+}
+
+function renderSeasonComparisonsView() {
+  const seasonCounts = SEASON_ORDER.map((id) => ({
+    id,
+    label: seasonLookup[id].season_name,
+    count: speciesCatalog.filter((species) => species.seasonPresence[id] === 'y').length
+  }));
+  const iluaCounts = ILUA_ORDER.map((id) => ({
+    id,
+    label: iluaLookup[id].ilua_name,
+    count: speciesCatalog.filter((species) => species.iluaPresence[id] === 'y').length
+  }));
+  const categoryCounts = Object.entries(CATEGORY_INFO).map(([id, category]) => ({
+    id,
+    label: category.label,
+    count: speciesCatalog.filter((species) => species.category === id).length
+  }));
+  const maxCount = Math.max(
+    1,
+    ...seasonCounts.map((item) => item.count),
+    ...iluaCounts.map((item) => item.count),
+    ...categoryCounts.map((item) => item.count)
+  );
+
+  const renderBars = (items, group) => items.map((item) => `
+    <div class="comparison-bar-row" data-comparison-group="${group}" data-comparison-id="${item.id}">
+      <span class="comparison-label">${item.label}</span>
+      <span class="comparison-track" aria-hidden="true">
+        <span class="comparison-bar ${group}-bar" style="width: ${(item.count / maxCount) * 100}%;${group === 'season' ? ` background-color: ${SEASON_COLORS[item.id]};` : ''}"></span>
+      </span>
+      <span class="comparison-count">${item.count} species</span>
+    </div>
+  `).join('');
+
+  const seasonIluaMatrix = SEASON_ORDER.map((seasonId) => `
+    <tr>
+      <th scope="row">${seasonLookup[seasonId].season_name}</th>
+      ${ILUA_ORDER.map((iluaId) => {
+        const count = speciesCatalog.filter((species) =>
+          species.seasonPresence[seasonId] === 'y' &&
+          species.iluaPresence[iluaId] === 'y'
+        ).length;
+        return `<td data-season="${seasonId}" data-ilua="${iluaId}">${count}</td>`;
+      }).join('')}
+    </tr>
+  `).join('');
+
+  return `
+    <div class="view comparisons-view">
+      <div class="view-header">
+        <h2>Season comparisons</h2>
+        <p>Compare how many catalogued species are recorded across seasons, ILUA areas, and plant categories.</p>
+      </div>
+
+      <section class="comparison-section" aria-labelledby="season-counts-title">
+        <h3 id="season-counts-title">Species by season</h3>
+        <div class="comparison-bars">${renderBars(seasonCounts, 'season')}</div>
+      </section>
+
+      <section class="comparison-section" aria-labelledby="ilua-counts-title">
+        <h3 id="ilua-counts-title">Species by ILUA area</h3>
+        <div class="comparison-bars">${renderBars(iluaCounts, 'ilua')}</div>
+      </section>
+
+      <section class="comparison-section" aria-labelledby="category-counts-title">
+        <h3 id="category-counts-title">Species by category</h3>
+        <div class="comparison-bars">${renderBars(categoryCounts, 'category')}</div>
+      </section>
+
+      <section class="comparison-section matrix-section" aria-labelledby="season-ilua-title">
+        <h3 id="season-ilua-title">Species by season and ILUA area</h3>
+        <p>Each cell counts species recorded in both the season and the ILUA area.</p>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th scope="col">Season</th>
+                ${ILUA_ORDER.map((id) => `<th scope="col">${iluaLookup[id].ilua_name}</th>`).join('')}
+              </tr>
+            </thead>
+            <tbody>${seasonIluaMatrix}</tbody>
+          </table>
+        </div>
+      </section>
+
+      <p class="comparison-note">Counts are based on the species records and season/ILUA availability flags in the project data.</p>
+    </div>
+  `;
 }
 
 // Creates the ILUA selection screen. It presents each ILUA area as a selectable map node.
@@ -419,6 +516,11 @@ function renderPhotoDialog(hasSpecies) {
 function bindSeasonEvents() {
   document.querySelector('.found-species-button')?.addEventListener('click', () => {
     STATE.navStack.push('foundSpecies');
+    render();
+  });
+
+  document.querySelector('.comparison-button')?.addEventListener('click', () => {
+    STATE.navStack.push('comparisons');
     render();
   });
 

@@ -156,9 +156,16 @@ button, input, a {
   overflow: hidden;
 }
 
-.found-species-button {
-  align-self: flex-start;
+.home-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
   margin-top: 4px;
+}
+
+.found-species-button,
+.comparison-button {
   border: 0;
   border-radius: 8px;
   padding: 10px 16px;
@@ -169,8 +176,112 @@ button, input, a {
   cursor: pointer;
 }
 
-.found-species-button:hover {
+.found-species-button:hover,
+.comparison-button:hover {
   background: var(--primary-dark);
+}
+
+.comparisons-view {
+  align-items: stretch;
+}
+
+.comparison-section {
+  min-width: 0;
+  padding: 20px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(60, 75, 64, 0.05);
+}
+
+.comparison-section h3 {
+  margin: 0 0 16px;
+  font-size: 1.3rem;
+}
+
+.comparison-section > p {
+  margin: -8px 0 16px;
+  color: var(--muted);
+}
+
+.comparison-bars {
+  display: grid;
+  gap: 13px;
+}
+
+.comparison-bar-row {
+  display: grid;
+  grid-template-columns: minmax(130px, 1fr) minmax(80px, 2fr) minmax(100px, auto);
+  align-items: center;
+  gap: 14px;
+}
+
+.comparison-label {
+  font-weight: 700;
+}
+
+.comparison-track {
+  display: block;
+  height: 18px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #ece8dc;
+}
+
+.comparison-bar {
+  display: block;
+  height: 100%;
+  min-width: 2px;
+  border-radius: inherit;
+  background: var(--primary);
+}
+
+.ilua-bar {
+  background: #6c8f66;
+}
+
+.category-bar {
+  background: var(--accent);
+}
+
+.comparison-count {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.comparison-table-wrapper {
+  overflow-x: auto;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.comparison-table th,
+.comparison-table td {
+  min-width: 90px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.comparison-table thead th {
+  background: var(--panel-alt);
+}
+
+.comparison-table tbody th {
+  text-align: left;
+}
+
+.comparison-note {
+  margin: -8px 0 0;
+  color: var(--text);
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 .season-svg {
@@ -692,5 +803,36 @@ button, input, a {
 
   .found-toggle {
     justify-content: flex-start;
+  }
+
+  .comparison-section {
+    padding: 16px 12px;
+  }
+
+  .comparison-bar-row {
+    grid-template-columns: minmax(95px, 1fr) minmax(55px, 1.2fr) auto;
+    gap: 8px;
+    font-size: 0.9rem;
+  }
+
+  .home-actions {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 420px) {
+  .home-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .comparison-bar-row {
+    grid-template-columns: minmax(80px, 1fr) minmax(45px, 1fr) auto;
+    gap: 6px;
+    font-size: 0.8rem;
+  }
+
+  .comparison-count {
+    font-size: 0.75rem;
   }
 }
