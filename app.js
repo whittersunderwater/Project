@@ -206,7 +206,7 @@ function renderSeasonView() {
       </div>
       <div class="home-actions">
         <button class="found-species-button" type="button">View all species found to date</button>
-        <button class="comparison-button" type="button">Season comparisons</button>
+        <button class="comparison-button" type="button">Season, ILUA, and Category comparisons</button>
       </div>
     </div>
     `;
