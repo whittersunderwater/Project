@@ -4,21 +4,31 @@ This app helps you explore plant species by Noongar season, ILUA area, and categ
 
 ## Start the app
 
-The app loads its CSV data with browser requests, so open it through a local web server rather than opening `index.html` directly.
+### System requirements
 
-1. Ensure your device has terminal capabilities
-2. Download all files from GitHub (https://github.com/whittersunderwater/Project.git) and save to your device
-3. Open PowerShell or a terminal and navigate to the "Project" folder.
-4. Start the server:
+- A modern browser with JavaScript enabled. The app has not been tested against a formal browser support matrix.
+- A local web server to load the CSV files; opening `index.html` directly is not supported. Python is one option for starting the server.
+- The project files kept together, including the CSV files and image folders.
+
+The automated tests have been run on Windows using Playwright's Chromium browser. Other operating systems and browsers, including Safari and Microsoft Edge, have not yet been confirmed by the project tests. The app is built with standard web technologies, but compatibility on other platforms should be tested before relying on it.
+
+1. Download all files from GitHub (https://github.com/whittersunderwater/Project.git) and save them to your device.
+2. Open a terminal and navigate to the "Project" folder.
+3. Start a local server. On Windows, use:
 
    ```powershell
    py -m http.server 8000
    ```
 
-   If `py` is unavailable but Python is installed, use `python3 -m http.server 8000` instead.
-   If Python is not installed, download latest version and install.
-5. In your browser, navigate to <http://localhost:8000>.
-6. Leave the terminal window open while using the app. Press Ctrl+C in that window when you are finished.
+   On macOS or Linux, use:
+
+   ```sh
+   python3 -m http.server 8000
+   ```
+
+   If Python is not installed, install it or use another local web server.
+4. In your browser, navigate to <http://localhost:8000>.
+5. Leave the terminal window open while using the app. Press Ctrl+C in that window when you are finished.
 
 If port 8000 is already in use, start the server on another port, such as 8001, and open the matching address, for example <http://localhost:8001>.
 

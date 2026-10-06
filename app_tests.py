@@ -13,7 +13,7 @@ from urllib.error import URLError
 from urllib.request import urlopen
 
 import pytest
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page, Playwright, expect
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent
@@ -558,3 +558,42 @@ def test_main_navigation_has_no_uncaught_javascript_errors(
     open_species_page(clean_page)
 
     assert errors == []
+
+
+@pytest.mark.parametrize("engine", ["chromium", "firefox", "webkit"])
+def test_browser_compatibility(
+    engine: str,
+    playwright: Playwright,
+    app_url: str,
+) -> None:
+    browser_type = getattr(playwright, engine)
+    if not Path(browser_type.executable_path).is_file():
+        pytest.skip(
+            f"{engine} is not installed. "
+            "Install it with `py -m playwright install "
+            f"{engine}` to run this compatibility check."
+        )
+
+    with browser_type.launch() as browser:
+        page = browser.new_page()
+        page_errors = []
+        page.on("pageerror", lambda error: page_errors.append(str(error)))
+
+        page.goto(app_url)
+        expect(page.locator(".season-wedge")).to_have_count(6)
+
+        open_species_page(page)
+        first_species_name = page.locator(".species-body h3").first.inner_text()
+        page.locator(".found-toggle input").first.check()
+        page.reload()
+
+        open_species_page(page)
+        page.locator("#found-filter").select_option("found")
+        expect(page.locator(".species-body h3")).to_have_text([first_species_name])
+
+        page.locator(".species-photo-button").first.click()
+        expect(page.locator(".photo-dialog")).to_be_visible()
+        page.get_by_role("button", name="Close enlarged photo").click()
+        expect(page.locator(".photo-dialog")).not_to_be_visible()
+
+        assert page_errors == []
