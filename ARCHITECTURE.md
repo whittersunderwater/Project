@@ -5,7 +5,7 @@ the diagram can be edited as text in this file and rendered by Mermaid-compatibl
 editors and viewers.
 
 ```mermaid
-flowchart TB
+flowchart LR
     User([User])
 
     subgraph Host["Local static web server"]
@@ -27,7 +27,7 @@ flowchart TB
     HTML -->|"Loads structure"| DOM
     HTML -->|"Loads script"| JS
     HTML -->|"Loads stylesheet"| CSS
-    JS -->|"Renders and updates"| DOM
+    JS <-->|"UI updates / events"| DOM
     CSS -->|"Styles"| DOM
 
     JS -->|"Fetches five CSV files over HTTP"| CSV
@@ -37,7 +37,6 @@ flowchart TB
     LocalStorage -->|"Restore saved checkbox values at startup"| State
     State -->|"Current data and selections"| Views
     Views -->|"Rendered content"| DOM
-    DOM -->|"Clicks, filter changes, Found toggles"| JS
     JS -->|"Update selections, navigation stack, and filters"| State
     JS -->|"Save Found checkbox changes"| LocalStorage
     JS -->|"Image requests from rendered views"| Images
@@ -59,7 +58,6 @@ flowchart TB
     Catalog -->|"Availability flags and categories"| Counts
     Counts -->|"Counts and comparison matrix"| Views
 
-    JS -.->|"Load/parse/validation failure renders a data-load error"| DOM
 ```
 
 ## Data and behavior notes
@@ -74,3 +72,5 @@ flowchart TB
 - Found checkbox values are saved in browser `localStorage` on the current
   device. CSV data and image assets are served as static files; there is no
   application backend or remote database.
+- The application DOM sends user interactions to `app.js` and receives rendered
+  views and any data-load error state in return.

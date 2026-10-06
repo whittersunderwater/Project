@@ -106,4 +106,5 @@ This log records substantive requests made in the current session. Conversationa
 • how the components interact; and
 • how data moves through the system.
 • The diagram should accurately represent the application you actually built.
-
+- how do I fix labels overlapping on the diagram
+- changed it to LR, labels to/from app.js to application DOM are overlapping
