@@ -186,7 +186,7 @@ function renderSeasonView() {
   return `
     <div class="view">
       <div class="view-header">
-        <h2>The Noongar year is divided into six seasons which represent a timetable of future events, determined by what is changing and happening in nature.</h2>
+        <h2>The Noongar calendar comprises six seasons based on a yearly cycle of changes in nature. The seasons vary in length depending on environmental cues and reflect connection to land for Noongar people.</h2>
         <p>Select a season to begin exploring the seasons, regions, and plants of Noongar Country.</p>
       </div>
 
@@ -331,7 +331,7 @@ function renderIluaView() {
   return `
     <div class="view">
       <div class="view-header">
-        <h2>Noongar Indigenous Land Use Agreement Regions</h2>
+        <h2>The Noongar Indigenous Land Use Agreement (ILUA) regions cover around 200,000 square kilometres of the southwest of Western Australia. They are separate geographic regions under the South West Native Title Settlement and represent distinct traditional dialect and family groups.</h2>
         <p>Select a Noongar ILUA region on the map to continue exploring.</p>
       </div>
 
