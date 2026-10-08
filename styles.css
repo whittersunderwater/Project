@@ -65,7 +65,7 @@ button, input, a {
   padding: 8px 14px;
   border-radius: 8px;
   background-color: #1d4f38;
-  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
   text-align: center;
   color: #fffdf9;
 }
