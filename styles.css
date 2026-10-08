@@ -65,7 +65,7 @@ button, input, a {
   padding: 8px 14px;
   border-radius: 8px;
   background-color: #1d4f38;
-  font-size: calc(clamp(1.8rem, 2vw, 3rem) + 2pt);
+  font-size: clamp(1.2rem, 2vw, 2rem);
   text-align: center;
   color: #fffdf9;
 }
@@ -111,13 +111,15 @@ button, input, a {
 
 .view-header h2 {
   margin: 0 0 8px;
-  font-size: calc(clamp(1.6rem, 2vw, 2.3rem) - 2pt);
+  font-size: 1.6rem;
+  font-weight: 550;
 }
 
 .view-header p {
   margin: 0;
   color: #1d4f38;
-  font-size: calc(clamp(1.6rem, 2vw, 2.3rem) - 4pt);
+  font-size: 1.4rem;
+  font-weight: 400;
 }
 
 .view-header .found-to-date-count {
