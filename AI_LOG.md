@@ -112,3 +112,4 @@ This log records substantive requests made in the current session. Conversationa
 
 ## 2026-10-08
 - move the navigation "Back" button so that it is located on the right of the "Home" button
+- change the text of the listed seasons, ilua areas, and categories in the charts and table of the comparisons dashboard to all uppercase

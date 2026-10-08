@@ -166,6 +166,7 @@ function renderSeasonView() {
     const isDjilba = id === 's5';
     const isKambarang = id === 's6';
     const extraRotation = isBirak || isBunuru || isDjilba || isKambarang ? -90 : isDjeran || isMakuru ? 90 : 0;
+    const seasonName = season.season_name || '';
     const seasonInfo1 = season.season_info1 || '';
     const seasonInfo2 = season.season_info2 || '';
 
@@ -173,7 +174,7 @@ function renderSeasonView() {
       <g class="season-wedge ${isSelected ? 'selected' : ''}" data-season="${id}" data-angle="${midAngle}">
         <path d="${path}" fill="${SEASON_COLORS[id]}" stroke="${SEASON_COLORS[id]}" stroke-width="4" />
         <g transform="translate(${labelPoint.x} ${labelPoint.y}) rotate(${midAngle + 90 + extraRotation})">
-          <text class="season-text season-name" x="0" y="-22" text-anchor="middle" transform="rotate(${midAngle > 90 && midAngle < 270 ? 180 : 0})">${season.season_name}</text>
+          <text class="season-text season-name" x="0" y="-22" text-anchor="middle" transform="rotate(${midAngle > 90 && midAngle < 270 ? 180 : 0})">${seasonName}</text>
           <text class="season-text season-month" x="0" y="0" text-anchor="middle" transform="rotate(${midAngle > 90 && midAngle < 270 ? 180 : 0})">${season.season_months}</text>
           <text class="season-text season-weather" x="0" y="24" text-anchor="middle" transform="rotate(${midAngle > 90 && midAngle < 270 ? 180 : 0})">${season.season_weather}</text>
           <text class="season-text season-info1" x="0" y="48" text-anchor="middle" transform="rotate(${midAngle > 90 && midAngle < 270 ? 180 : 0})">${seasonInfo1}</text>
@@ -216,7 +217,7 @@ function renderSeasonView() {
 function renderSeasonComparisonsView() {
   const seasonCounts = SEASON_ORDER.map((id) => ({
     id,
-    label: seasonLookup[id].season_name,
+    label: seasonLookup[id].season_name.toUpperCase(),
     count: speciesCatalog.filter((species) => species.seasonPresence[id] === 'y').length
   }));
   const iluaCounts = ILUA_ORDER.map((id) => ({
@@ -226,7 +227,7 @@ function renderSeasonComparisonsView() {
   }));
   const categoryCounts = Object.entries(CATEGORY_INFO).map(([id, category]) => ({
     id,
-    label: category.label,
+    label: category.label.toUpperCase(),
     count: speciesCatalog.filter((species) => species.category === id).length
   }));
   const maxCount = Math.max(
@@ -248,7 +249,7 @@ function renderSeasonComparisonsView() {
 
   const seasonIluaMatrix = SEASON_ORDER.map((seasonId) => `
     <tr>
-      <th scope="row">${seasonLookup[seasonId].season_name}</th>
+      <th scope="row">${seasonLookup[seasonId].season_name.toUpperCase()}</th>
       ${ILUA_ORDER.map((iluaId) => {
         const count = speciesCatalog.filter((species) =>
           species.seasonPresence[seasonId] === 'y' &&
@@ -288,7 +289,7 @@ function renderSeasonComparisonsView() {
           <table class="comparison-table">
             <thead>
               <tr>
-                <th scope="col">Season</th>
+                <th scope="col">SEASON</th>
                 ${ILUA_ORDER.map((id) => `<th scope="col">${iluaLookup[id].ilua_name}</th>`).join('')}
               </tr>
             </thead>
