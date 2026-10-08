@@ -186,7 +186,8 @@ function renderSeasonView() {
   return `
     <div class="view">
       <div class="view-header">
-        <h2>The Noongar calendar comprises six seasons based on a yearly cycle of changes in nature. The seasons vary in length depending on environmental cues and reflect connection to land for Noongar people.</h2>
+        <h2>The Noongar calendar comprises six seasons based on a yearly cycle of changes in nature. The seasons vary in length depending on environmental cues and reflect connection to land for Noongar people.
+        Each seasonal transition brings changes in temperature, wind, rain and availability of plant and animal foods, which historically indicated time to move to a different geographical area. Traditionally, this would often involve mosaic burning to clear the land and activate seed germination with the next rains, thus maintaining sustainable use of the land.</h2>
         <p>Select a season to begin exploring the seasons, regions, and plants of Noongar Country.</p>
       </div>
 
