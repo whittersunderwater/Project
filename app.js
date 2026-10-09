@@ -663,23 +663,6 @@ function getFilteredSpecies() {
   }).sort((first, second) => first.species_name.localeCompare(second.species_name, undefined, { sensitivity: 'base' }));
 }
 
-// Delete this block - no longer used.
-// Produces a short, comma-separated list of the first three seasons recorded for a species.
-function getSeasonSummary(species) {
-  return SEASON_ORDER.filter((id) => species.seasonPresence[id] === 'y')
-    .map((id) => seasonLookup[id].season_name)
-    .slice(0, 3)
-    .join(', ');
-}
-
-// Delete this block - no longer used.
-// Produces a short, comma-separated list of the first three ILUA areas recorded for a species.
-function getIluaSummary(species) {
-  return ILUA_ORDER.filter((id) => species.iluaPresence[id] === 'y')
-    .map((id) => iluaLookup[id].ilua_name)
-    .slice(0, 3)
-    .join(', ');
-}
 
 // Converts season rows into an object keyed by season ID for direct lookup.
 function buildSeasonLookup(rows) {
