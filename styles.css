@@ -381,26 +381,6 @@ button, input, a {
   opacity: 1;
 }
 
-.season-details {
-  max-width: 760px;
-  margin: 0 auto;
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 18px 22px;
-  box-shadow: 0 6px 20px rgba(60, 75, 64, 0.08);
-}
-
-.season-details h3 {
-  margin: 0 0 10px;
-  font-size: clamp(1.4rem, 1.8vw, 1.8rem);
-}
-
-.season-details p {
-  margin: 0;
-  color: var(--text);
-  line-height: 1.55;
-}
 
 /* Second-view map layout and ILUA selection area styling. */
 .map-panel {
