@@ -10,6 +10,7 @@ const SEASON_COLORS = {
   s5: 'rgb(182, 207, 226)',
   s6: 'rgb(217, 166, 177)'
 };
+// Labels and representative photos used to present each plant category in the UI.
 const CATEGORY_INFO = {
   bush_food: {
     label: 'Bush Food',
@@ -28,6 +29,7 @@ const CATEGORY_INFO = {
   }
 };
 
+// Tracks navigation, current selections, filters, storage status, and saved Found states.
 const STATE = {
   navStack: ['season'],
   selectedSeason: '',
@@ -38,6 +40,7 @@ const STATE = {
   checked: loadCheckedState()
 };
 
+// These data structures are populated from the CSV files during app initialization.
 let seasonLookup = {};
 let iluaLookup = {};
 let speciesCatalog = [];
@@ -118,6 +121,7 @@ function render() {
   }
 }
 
+// Converts a point on a circle from polar coordinates to SVG-friendly x/y coordinates.
 function polarToCartesian(cx, cy, radius, angleDeg) {
   const rad = (angleDeg - 90) * (Math.PI / 180);
   return {
@@ -126,6 +130,7 @@ function polarToCartesian(cx, cy, radius, angleDeg) {
   };
 }
 
+// Builds the SVG path data for a ring-shaped sector between two angles.
 function describeAnnularSector(cx, cy, innerRadius, outerRadius, startAngle, endAngle) {
   const startOuter = polarToCartesian(cx, cy, outerRadius, endAngle);
   const endOuter = polarToCartesian(cx, cy, outerRadius, startAngle);
@@ -214,6 +219,7 @@ function renderSeasonView() {
     `;
 }
 
+// Summarizes catalog counts by season, ILUA area, and category, including a season/ILUA matrix.
 function renderSeasonComparisonsView() {
   const seasonCounts = SEASON_ORDER.map((id) => ({
     id,
@@ -473,6 +479,7 @@ function renderFoundSpeciesView() {
   `;
 }
 
+// Renders species cards with names, details, photos, and each species' Found toggle.
 function renderSpeciesList(species, emptyMessage, showCategory = false) {
   return `
     <div class="species-list">
@@ -504,6 +511,7 @@ function renderSpeciesList(species, emptyMessage, showCategory = false) {
   `;
 }
 
+// Adds the photo enlargement dialog only when the current view contains species.
 function renderPhotoDialog(hasSpecies) {
   return hasSpecies ? `
     <dialog class="photo-dialog" aria-label="Enlarged species photo">
@@ -536,6 +544,7 @@ function bindSeasonEvents() {
   });
 }
 
+// Sends the selected ILUA area to the category screen.
 function bindIluaEvents() {
   document.querySelectorAll('.ilua-node').forEach((button) => {
     button.addEventListener('click', () => {
@@ -546,6 +555,7 @@ function bindIluaEvents() {
   });
 }
 
+// Sends the selected plant category to the species list screen.
 function bindCategoryEvents() {
   document.querySelectorAll('.category-card').forEach((button) => {
     button.addEventListener('click', () => {
@@ -556,6 +566,7 @@ function bindCategoryEvents() {
   });
 }
 
+// Connects the species filters, photo enlargement, list navigation, and Found toggles to their event handlers.
 function bindSpeciesEvents(foundOnly = false) {
   document.querySelector('#found-filter')?.addEventListener('change', (event) => {
     STATE.foundFilter = event.target.value;
@@ -620,6 +631,7 @@ function bindSpeciesEvents(foundOnly = false) {
   });
 }
 
+// Returns to the previous screen in the navigation stack when one exists.
 function goBack() {
   if (STATE.navStack.length > 1) {
     STATE.navStack.pop();
@@ -627,6 +639,7 @@ function goBack() {
   }
 }
 
+// Resets the navigation stack and current selections to the season wheel.
 function goHome() {
   STATE.navStack = ['season'];
   STATE.selectedSeason = '';
@@ -635,6 +648,7 @@ function goHome() {
   render();
 }
 
+// Returns alphabetized species present in the selected season and ILUA area and category.
 function getFilteredSpecies() {
   if (!STATE.selectedSeason || !STATE.selectedILUA || !STATE.selectedCategory) {
     return [];
@@ -649,6 +663,8 @@ function getFilteredSpecies() {
   }).sort((first, second) => first.species_name.localeCompare(second.species_name, undefined, { sensitivity: 'base' }));
 }
 
+// Delete this block - no longer used.
+// Produces a short, comma-separated list of the first three seasons recorded for a species.
 function getSeasonSummary(species) {
   return SEASON_ORDER.filter((id) => species.seasonPresence[id] === 'y')
     .map((id) => seasonLookup[id].season_name)
@@ -656,6 +672,8 @@ function getSeasonSummary(species) {
     .join(', ');
 }
 
+// Delete this block - no longer used.
+// Produces a short, comma-separated list of the first three ILUA areas recorded for a species.
 function getIluaSummary(species) {
   return ILUA_ORDER.filter((id) => species.iluaPresence[id] === 'y')
     .map((id) => iluaLookup[id].ilua_name)
@@ -663,7 +681,7 @@ function getIluaSummary(species) {
     .join(', ');
 }
 
-// Converts the CSV rows into lookup objects so data can be retrieved by ID quickly.
+// Converts season rows into an object keyed by season ID for direct lookup.
 function buildSeasonLookup(rows) {
   return rows.reduce((acc, row) => {
     acc[row.season_id] = row;
@@ -671,6 +689,7 @@ function buildSeasonLookup(rows) {
   }, {});
 }
 
+// Converts ILUA rows into an object keyed by ILUA ID for direct lookup.
 function buildIluaLookup(rows) {
   return rows.reduce((acc, row) => {
     acc[row.ilua_id] = row;
@@ -678,6 +697,7 @@ function buildIluaLookup(rows) {
   }, {});
 }
 
+// Merges category datasets and normalizes each row into the structure used by the UI.
 function buildSpeciesCatalog(foodRows, medRows, wildRows) {
   const allRows = [...foodRows, ...medRows, ...wildRows];
 
@@ -730,6 +750,7 @@ function fetchCSV(filePath) {
     });
 }
 
+// Rejects empty datasets and CSV files missing columns required by the app.
 function validateCSVRows(filePath, rows) {
   if (!rows.length) {
     throw new Error(`${filePath} is empty or has no data rows.`);
@@ -837,6 +858,7 @@ function loadCheckedState() {
   }
 }
 
+// Creates a simple inline SVG fallback image labeled with the supplied plant name.
 function placeholderImage(label) {
   const safeLabel = (label || 'Plant').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`
