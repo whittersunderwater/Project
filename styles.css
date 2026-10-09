@@ -692,23 +692,6 @@ button, input, a {
   color: var(--text);
 }
 
-.species-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.meta-tag {
-  background: var(--panel-alt);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 6px 10px;
-  color: var(--primary-dark);
-  font-size: 0.82rem;
-  font-weight: 700;
-}
-
 .found-toggle {
   display: flex;
   align-items: center;
