@@ -116,4 +116,4 @@ This log records substantive requests made in the current session. Conversationa
 
 ## 2026-10-09
 - add clear explanatory comments to app.js and styles.css to blocks of code that don't already have comments
-- confirm functions getSeasonSummary and getIluaSummary are no longer required
+- check for coding in app.js and styles.css that is no longer used by the current app functionality and can be safely deleted
